@@ -1,0 +1,33 @@
+{
+    "devices": [
+        {
+            "brand": "ECRS",
+            "model": "DTP80-i",
+            "serial": "X9CXXXXXXX",
+            "type": "impresora",
+            "port": "3010",
+            "ip":"127.0.0.1",
+            "dispositivo":0
+        }
+    ],
+    "ecrs":{
+        "formas-pago": [
+            {
+                "01": "EFECTIVO",
+                "02": "EFECTIVO 2",
+                "03": "T. CREDITO",
+                "04": "T. DIVISA",
+                "05": "TRANSFERENCIA",
+                "06": "PAGO MOVIL",
+                "07": "OTROS",
+                "08": "ZELLE IGTF",
+                "09": "WALLET",
+                "10": "DIVISA IGTF",
+                "11": "AMRICAN EXPRESS",
+                "12": "CHEQUE",
+                "13": "DINNERS CLUB",
+                "14": "TARJETA REGALO"
+            }
+        ]
+    }
+}

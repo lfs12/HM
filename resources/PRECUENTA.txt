@@ -1,0 +1,21 @@
+[EMPRESA                                                ]
+CLIENTE: [CLIENTE                                       ]
+RIF / C.I: [RIF                                         ]
+
+
+CUENTA [NDOC                                             ]
+NRO. DE MESA: [MESA                                      ]
+
+
+PRODUCTO             CANT          MONTO
+==================== ==== ================== =============
+[PRODU            ][%4 CANT] [%8.2 MONTL] Bs  [%8.2 REF  ]$
+==================== ==== ================== =============
+
+SUBTOTAL:            [%11.2 TOTBR] Bs  [%11.2 TOTBR_REF] $
+SERVICIO: [SRV]      [%11.2 TOTSRV] Bs  [%11.2 TOTSRV_REF] $
+TOTAL:               [%11.2 NETOSINIVA] Bs  [%11.2 NETOSINIVA_REF] $
+IVA: [IVA]            [%11.2 TOIVA] Bs  [%11.2 TOIVA_REF] $
+
+TOTAL CON 3 % IGTF   [%11.2 APAGA_IGTF] Bs  [%11.2 APAGA_REF_IGTF] $
+MONTO A PAGAR:      [%11.2 APAGA] Bs  [%11.2 APAGA_REF] $

@@ -1,0 +1,81 @@
+{
+    "devices": [
+        {
+            "brand": "BEMATECH",
+            "model": "MP-2100",
+            "serial": "39220411212345",
+            "type": "impresora",
+            "port": "COM4",
+            "ip":"",
+            "dispositivo":0
+        }
+    ],
+    "Bematech":{
+        "formas-pago": [
+            {
+                "01": "EFECTIVO",
+                "02": "EFECTIVO 2",
+                "03": "T. CREDITO",
+                "04": "T. DIVISA",
+                "05": "TRANSFERENCIA",
+                "06": "PAGO MOVIL",
+                "07": "OTROS",
+                "08": "ZELLE IGTF",
+                "09": "WALLET",
+                "10": "DIVISA IGTF",
+                "11": "AMRICAN EXPRESS",
+                "12": "CHEQUE",
+                "13": "DINNERS CLUB",
+                "14": "TARJETA REGALO"
+            }
+        ]
+    },
+
+    "hka": {
+        "formas-pago": [
+            {
+                "serial": "*",
+                "01": "EFECTIVO",
+                "02": "T.CREDITO",
+                "03": "T.DEBITO",
+                "04": "PAGO MOVIL",
+                "05": "EFECTIVO 2",
+                "06": "OTROS",
+                "07": "EFECTIVO 50",
+                "08": "TARJETA 2",
+                "09": "VISA",
+                "10": "PAGO MOVIL",
+                "11": "0",
+                "12": "TARJETA 3",
+                "13": "",
+                "14": "",
+                "15": "",
+                "16": "WALLET",
+                "17": "",
+                "18": "DIVISA 2",
+                "19": "",
+                "20": "DIVISA IGTF",
+                "21": "ZELLE",
+                "22": "",
+                "23": "",
+                "24": ""
+            }
+        ]
+    },
+    "pnp": {
+        "tasas": [
+            {
+                "serial": "*",
+                "G": 16,
+                "R": 8,
+                "A": 32
+            },
+            {
+                "serial": "EOG0003063",
+                "G": 16,
+                "R": 8,
+                "A": 32
+            }
+        ]
+    }
+}

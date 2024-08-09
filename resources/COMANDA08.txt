@@ -1,0 +1,12 @@
+ZONA [ZONA                            ]
+MESA [MESA                            ]
+[USER                                 ]
+No. DOCUMENTO [CORRELA                ]
+FECHA [FECHA     ] HORA [HORA    ]
+CUENTA [NDOC                          ]
+
+CANT  PRODUCTO
+==== ====================================
+[LINEA                                   ]   
+==== ===================================
+

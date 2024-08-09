@@ -1,0 +1,25 @@
+[EMPRESA                              ]
+RIF: [RIF        ]   TLF: [TLF        ] 
+[DIRECCION                                                                                                                                                          ]
+FECHA: [FECHA     ] [HORA  ]
+
+               CUADRE DE CAJA
+
+TASA: [%5.2 TASA]
+ESTACION: [ESTACION                ]
+DESDE: [DESDE                      ] 
+HASTA: [HASTA                      ]
+
+FACTURAS: [N_FACTURAS]
+   DE: [FACT_PRI     ]    A: [FACT_ULT     ]
+
+DEVOLUCIONES: [N_DEVOLUCIONES]
+   DE: [DEV_PRI     ]    A: [DEV_ULT     ]
+
+INGRESO BRUTO:      [%11.2 TOTAL_VENTA_BRUTO] Bs
+   DESCUENTOS:      [%11.2 DESCUENTOS] Bs
+
+DISTRIBUCION DE LOS INGRESOS
+[METODO_PAGO   ]  [%5.2 MONTO] Bs [%5.2 MONTO_DOLAR] $
+               ------------------
+TOTAL:            [%5.2 TOTAL] Bs [%5.2 TOTAL_DOLAR] $
