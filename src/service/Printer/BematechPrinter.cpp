@@ -62,6 +62,25 @@ std::string convertirFechaYHora(const std::string& fecha, const std::string& hor
 
     return resultado; // Resultado final  
 }
+std::string convertirFechaYHora2(const std::string& fecha, const std::string& hora) {  
+    // Se espera que la fecha esté en formato "YYYY-MM-DD"  
+    // y la hora en formato "HH:MM:SS".  
+
+    // Extraer el día, mes, y año de la fecha  
+    std::string anio = fecha.substr(2, 2);  // YY  
+    std::string mes = fecha.substr(5, 2);   // MM  
+    std::string dia = fecha.substr(8, 2);   // DD  
+
+    // Extraer las horas, minutos y segundos de la hora  
+    std::string horas = hora.substr(0, 2);   // HH  
+    std::string minutos = hora.substr(3, 2);  // MM  
+    // std::string segundos = hora.substr(6, 2); // SS  
+    std::string segundos = "00"; // SS  
+    // Formar el nuevo formato  
+    std::string resultado = dia + mes + anio + horas + minutos + segundos; // DDMMYYHHMMSS  
+
+    return resultado; // Resultado final  
+}
 std::string vectorToString(const std::vector<int> &vec) {  
     std::ostringstream oss; // Usamos ostringstream para construir la cadena  
     
@@ -1236,7 +1255,7 @@ std::string total_igtf="0";
         OATPP_LOGI("NC-SERIAL ===>","%s", dat->factura->notaFiscal->serialFiscal.getValue("--------------").c_str());
         //RIF del cliente
         cmd += this->fillString(dat->factura->cliente->rif.getValue("------"), 18, ' ');
-        auto fecha_hora = convertirFechaYHora(dat->factura->notaFiscal->fecha.getValue("0000-00-00"), dat->factura->notaFiscal->hora.getValue("00:00:00"));
+        auto fecha_hora = convertirFechaYHora2(dat->factura->notaFiscal->fecha.getValue("0000-00-00"), dat->factura->notaFiscal->hora.getValue("00:00:00"));
         OATPP_LOGI("NC-FECHA_HORA ===>","%s", fecha_hora.c_str());
         //Fecha de emisión
         cmd += this->fillString(fecha_hora.substr(0,5), 6, '0');
