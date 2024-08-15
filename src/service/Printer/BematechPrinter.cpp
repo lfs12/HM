@@ -608,7 +608,7 @@ void BematechPrinter::validarCampos(PrinterDto* dat) {
             if (item->producto->size() > 200) {  
                 throw std::invalid_argument("NOMBRE DE ITEM NO DEBE SUPERAR LOS 200 CARACTERES!");  
             }  
-            if (countDigits(item->precio) > 15) {  
+            if (countDigits((int)(item->precio + 0.5)) > 15) {  
                 throw std::invalid_argument("PRECIO DE ITEM NO DEBE SUPERAR LOS 14 DIGITOS!");  
             }  
             if (countDigits(item->cantidad) > 8) {  
@@ -617,15 +617,17 @@ void BematechPrinter::validarCampos(PrinterDto* dat) {
             if (item->tasa->size() > 2) {  
                 throw std::invalid_argument("IMPUESTO DE ITEM NO DEBE SUPERAR LOS 2 CARACTERES!");  
             }  
-            if (countDigits(item->descuento) > 11) {  
+            if (countDigits((int)(item->descuento + 0.5)) > 11) {  
                 throw std::invalid_argument("DESCUENTO EN ITEM NO DEBE SUPERAR LOS 10 DIGITOS!");  
             }  
         }  
     }  
     // Validaciones pagos  
-    if (dat->factura->pagos != nullptr && !dat->factura->pagos->empty()) {  
-        for (const auto& pago : *dat->factura->pagos) {  
-            if (countDigits(pago.get()->monto.getValue(0.00)) > 15) {  
+    if (!dat->factura->pagos->empty()) {
+        std::cout << "<<<Pagos no existe en vacio>>>" << std::endl;
+        auto pagos = dat->factura->pagos;  
+        for (const auto& pago : *pagos) {  
+            if (countDigits((int)(pago.get()->monto.getValue(0.00) + 0.5)) > 15) {  
                 throw std::invalid_argument("MONTO DE PAGO NO DEBE SUPERAR LOS 14 DIGITOS!");  
             }  
             if (countDigits(pago.get()->metodo_id) > 2) {  
@@ -1136,7 +1138,7 @@ std::string cmd, params, resultado;
     // //START ITEMS
     auto items = dat->factura->items.get();
     for(auto i = items->begin(); i != items->end(); i++){
-       cmd = this->hex2ascii("1b") + this->hex2ascii("3E") + this->hex2ascii("47");
+       cmd = this->hex2ascii("1b") + this->hex2ascii("3E") + this->hex2ascii("47") + this->hex2ascii("33");
        // Indice de la situación tributaria
        if(i->get()->tasa == "E"){
            cmd += "II";
@@ -1363,7 +1365,7 @@ std::string total_igtf="0";
     auto rawSubtotal = verSubtotal();
     auto total_monto_igtf = std::stof(monto) * 0.07;
 
-    rawSubtotal = rawSubtotal + "|" + fillString(total_venta_g, 14, '0') + "|" + fillString(total_impuesto_g, 14, '0') + "|" + fillString(total_venta_r, 14, '0') +  "|" + fillString(total_impuesto_r, 14, '0')  + "|" + fillString(total_venta_a, 14, '0') + "|" + fillString(total_impuesto_a, 14, '0') + "|" + fillString(total_venta_p, 14, '0') + "|" +  this->fillString(std::to_string(total_monto_igtf), 14, 2) + "|" + "00000000000000"; 
+    rawSubtotal = rawSubtotal + "|" + this->fillString(total_venta_g, 14, '0') + "|" + this->fillString(total_impuesto_g, 14, '0') + "|" + this->fillString(total_venta_r, 14, '0') +  "|" + this->fillString(total_impuesto_r, 14, '0')  + "|" + this->fillString(total_venta_a, 14, '0') + "|" + this->fillString(total_impuesto_a, 14, '0') + "|" + this->fillString(total_venta_p, 14, '0') + "|" +  this->fillString(std::to_string(total_monto_igtf), 14, 2) + "|" + "00000000000000"; 
     resultado = analizarFactura(comando, std::stoi(numFactura), fechaYhora, rawSubtotal, numDoc);
 
     return resultado;
